@@ -1,0 +1,292 @@
+@import '../scss/common_stlye.scss'; // Global Styles
+@mixin button-styles($bg-color, $text-color: $color-white) {
+    background: $bg-color;
+    border: none;
+    border-radius: 4px;
+    color: $text-color;
+    cursor: pointer;
+    padding: $spacing-small $spacing-large;
+}
+
+// Flex Mixin
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// Global Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+iframe {
+    width: 100%;
+    height: 670px;
+    border: none;
+    margin: 50px 0 50px 0;
+}
+
+@media (max-width: 480px) {
+    iframe {
+        width: 100%;
+        height: 250px;
+        border: none;
+        margin: 50px 0 50px 0;
+    }
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+a,
+p {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-family-poppins;
+    font-weight: 700;
+}
+
+button {
+    @include button-styles($color-blue);
+}
+
+body {
+    font-family: $font-family-roboto;
+    background: $color-background;
+    color: $color-white;
+    overflow-x: hidden;
+}
+
+// Container
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: $spacing-small;
+}
+
+.wrapper {
+    height: 100vh;
+    color: $color-white;
+    @include flex(column, space-between);
+    // Header
+    .header {
+        width: 100%;
+        .header_top {
+            @include flex(row, space-between, center);
+            padding: $spacing-medium;
+            .header_menu {
+                @include flex(row);
+                .router_menu {
+                    margin-left: $spacing-large;
+                }
+            }
+            .mobile_icon {
+                display: none;
+            }
+        }
+        .header_main {
+            @include flex(row, space-around, center);
+            text-align: start;
+            transition: all 1s ease-out;
+            // Header Left (Text)
+            .header_main_lift {
+                @include flex(column);
+                width: 50%;
+                .main_title {
+                    color: $color-white;
+                    font-family: $font-family-poppins;
+                    font-size: 36px;
+                    line-height: 1.2;
+                    margin-bottom: $spacing-medium;
+                }
+                .paragraph {
+                    color: $color-light-white;
+                    font-size: 18px;
+                    line-height: 1.6;
+                    margin: $spacing-medium 0;
+                }
+                button {
+                    @include button-styles($color-blue);
+                    width: 204px;
+                    height: 58px;
+                    .button_content {
+                        @include flex(row, center, center);
+                    }
+                    p {
+                        color: $color-white;
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+                }
+            }
+            // Header Right (Banner Image)
+            .header_main_right {
+                width: 40%;
+                .banner_content img {
+                    width: 100%;
+                    max-width: 500px;
+                }
+            }
+        }
+    }
+    // Main Section
+    .main {
+        flex: 1;
+        .main_title {
+            @include flex($justify: space-between, $align: center);
+            @media (max-width: 480px) {
+                @include flex($direction: column);
+                .right_title {
+                    padding-top: 30px;
+                }
+            }
+            .left_title {
+                font-size: $spacing-medium;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 50px;
+                letter-spacing: -0.657px;
+            }
+            .right_title {
+                color: $color-light-white;
+            }
+        }
+    }
+}
+
+// Animations
+.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-right {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease-out;
+}
+
+.slide-left {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s ease-out;
+}
+
+// Responsive Design (Mobile First)
+@media (max-width: 480px) {
+    .wrapper {
+        .header {
+            .header_top {
+                padding: $spacing-small;
+                .mobile_icon {
+                    display: block;
+                    cursor: pointer;
+                }
+                .header_menu {
+                    display: none;
+                }
+                .header_button {
+                    display: none;
+                }
+                &.active+.header_menu {
+                    @include flex(column, center);
+                }
+            }
+            .header_main {
+                @include flex(column, flex-start, flex-start);
+                .header_main_lift {
+                    width: 100%;
+                    .main_title {
+                        font-size: 28px;
+                        line-height: 1.2;
+                    }
+                    .paragraph {
+                        font-size: 16px;
+                        line-height: 1.4;
+                    }
+                    button {
+                        width: 160px;
+                        height: 45px;
+                        @include flex(flex, center);
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .header_main_right {
+                    width: 100%;
+                    @include flex(row, center);
+                    .banner_content img {
+                        width: 100%;
+                        max-width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Tablets
+@media (min-width: 481px) and (max-width: 768px) {
+    .wrapper {
+        .header {
+            .header_main {
+                padding-left: $spacing-medium;
+                .header_main_lift {
+                    width: 90%;
+                    .main_title {
+                        font-size: 30px;
+                        line-height: 1.2;
+                    }
+                    .paragraph {
+                        font-size: 16px;
+                        padding: $spacing-medium 0;
+                    }
+                    button {
+                        width: 180px;
+                        height: 50px;
+                        p {
+                            font-size: 18px;
+                        }
+                    }
+                }
+                .header_main_right {
+                    width: 100%;
+                    @include flex(row, center);
+                }
+            }
+        }
+    }
+}
+
+// Desktops
+@media (min-width: 769px) and (max-width: 1024px) {
+    .wrapper {
+        .header {
+            .header_main {
+                padding-left: $spacing-xlarge;
+                flex-direction: column;
+                .header_main_lift {
+                    width: 70%;
+                }
+                .header_main_right {
+                    width: 60%;
+                }
+            }
+        }
+    }
+}
