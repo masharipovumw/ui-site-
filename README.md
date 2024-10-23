@@ -40,11 +40,6 @@ To get a local copy up and running, follow these simple steps:
    ```bash
    git clone https://github.com/masharipovumw/ui-site
 <<<<<<< HEAD
-<div>
-        <img src="https://imgur.com/gallery/site-yThRfmm" alt="responsive" width="80%" /> 
-        <img src="https://imgur.com/3WvLNC6" alt="Animated Showcase" width="80%" /> 
 
-</div>
-=======
 
 >>>>>>> 0279ac6343415ac2b258d024798e3dd3c2ddd205
