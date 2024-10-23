@@ -54,7 +54,7 @@ button {
 
 body {
   font-family: "Roboto", sans-serif;
-  background: linear-gradient(180deg, #0c0f29, #181b3a, #19191B);
+  background: radial-gradient(circle, rgb(30, 30, 32) 46%, rgb(84, 84, 212) 100%);
   color: #ffffff;
   overflow-x: hidden;
 }
@@ -141,7 +141,7 @@ body {
 }
 .wrapper .header .header_main .header_main_lift button p {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
 }
 .wrapper .header .header_main .header_main_right {
@@ -180,6 +180,155 @@ body {
 }
 .wrapper .main .main_title .right_title {
   color: rgba(255, 255, 255, 0.7);
+}
+.wrapper .main .card-title h1 {
+  font-size: 60px;
+}
+@media (max-width: 480px) {
+  .wrapper .main .card-title h1 {
+    font-size: 36px;
+  }
+}
+.wrapper .main .main_cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+@media (max-width: 480px) {
+  .wrapper .main .main_cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.wrapper .main .main_cards .main-card {
+  width: 384px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+.wrapper .main .main_cards .main-card .card-main-title {
+  margin: 20px 0px 20px 0px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.75px;
+}
+.wrapper .main .main_cards .main-card .card-paragraph {
+  width: 299px;
+  height: 56px;
+}
+.wrapper .main .main_content .main_porfolio {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.wrapper .main .main_content .main_porfolio .card_2 {
+  padding-top: 58px;
+}
+.wrapper .main .main_content .main_porfolio .card_3 {
+  padding-top: 116px;
+}
+@media (max-width: 480px) {
+  .wrapper .main .main_content .main_porfolio {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.wrapper .footer {
+  width: 100%;
+}
+.wrapper .footer .footer_top {
+  background: rgba(30, 30, 32, 0.5);
+  padding: 120px;
+  height: 300px;
+  width: 100%;
+}
+@media (max-width: 480px) {
+  .wrapper .footer .footer_top {
+    padding: 30px;
+  }
+}
+.wrapper .footer .footer_top .text_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper .footer .footer_top .text_btn .footer_main_tex h1 {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+@media (max-width: 480px) {
+  .wrapper .footer .footer_top .text_btn .footer_main_tex h1 {
+    font-weight: 500;
+    font-size: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .wrapper .footer .footer_top .text_btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 50px;
+  }
+}
+.wrapper .footer .menu_lists {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.wrapper .footer .menu_lists .footer_sections {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+@media (max-width: 480px) {
+  .wrapper .footer .menu_lists .footer_sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.wrapper .footer .menu_lists .footer_sections .footer_menu {
+  color: rgba(255, 255, 255, 0.7);
+}
+.wrapper .footer .menu_lists .footer_sections .footer_menu:not(:last-child) {
+  gap: 40px;
+}
+.wrapper .footer .menu_lists .date_produce {
+  color: rgba(255, 255, 255, 0.7);
+}
+@media (max-width: 480px) {
+  .wrapper .footer .menu_lists {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 
 .in-view {

@@ -9,10 +9,9 @@ sans-serif;
 $color-white: #ffffff;
 $color-blue: #5454D4;
 $color-black:#000;
-$color-background: linear-gradient(180deg,
-#0c0f29,
-#181b3a,
-#19191B);
+$color-background: radial-gradient(circle,
+rgba(30, 30, 32, 1) 46%,
+rgba(84, 84, 212, 1) 100%);
 $color-light-white: rgba(255,
 255,
 255,
@@ -21,4 +20,5 @@ $color-light-white: rgba(255,
 $spacing-small: 10px;
 $spacing-medium: 20px;
 $spacing-large: 40px;
+$spacing-extra-large: 60px;
 $spacing-xlarge: 80px;
