@@ -53,10 +53,16 @@ button {
 }
 
 body {
+  position: relative;
   font-family: "Roboto", sans-serif;
   background: radial-gradient(circle, rgb(30, 30, 32) 46%, rgb(84, 84, 212) 100%);
   color: #ffffff;
   overflow-x: hidden;
+  -webkit-user-select: none;
+  /* For Safari */
+  /* For IE10+/Edge */
+  -moz-user-select: none;
+       user-select: none;
 }
 
 .container {
@@ -91,6 +97,7 @@ body {
 }
 .wrapper .header .header_top .header_menu .router_menu {
   margin-left: 40px;
+  transition: all 0.6ms ease;
 }
 .wrapper .header .header_top .mobile_icon {
   display: none;
@@ -132,6 +139,12 @@ body {
   padding: 10px 40px;
   width: 204px;
   height: 58px;
+  transition: all 0.9ms ease;
+}
+.wrapper .header .header_main .header_main_lift button:hover {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 .wrapper .header .header_main .header_main_lift button .button_content {
   display: flex;
@@ -331,6 +344,43 @@ body {
   }
 }
 
+.modal {
+  display: none;
+  transition: all 0.5s ease;
+}
+.modal .router_menu-modal {
+  color: #5454D4;
+}
+.modal .modal_title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+.modal .modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 500px;
+}
+.modal .router_menu-modal:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.active {
+  width: 240px;
+  height: 1040px;
+  display: block;
+  background-color: #ffffff;
+  border-radius: 5px;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  transition: all 0.5s ease;
+}
+
 .in-view {
   opacity: 1;
   transform: translateY(0);
@@ -355,6 +405,10 @@ body {
   .wrapper .header .header_top .mobile_icon {
     display: block;
     cursor: pointer;
+    border: none;
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
   }
   .wrapper .header .header_top .header_menu {
     display: none;
@@ -449,4 +503,17 @@ body {
   .wrapper .header .header_main .header_main_right {
     width: 60%;
   }
+}
+.router_menu:hover {
+  color: #5454D4;
+}
+
+.btn {
+  transition: all 0.9ms ease;
+}
+
+.btn:hover {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.3);
 }/*# sourceMappingURL=main.css.map */

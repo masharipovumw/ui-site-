@@ -65,10 +65,16 @@
             }
             
             body {
+                position: relative;
                 font-family: $font-family-roboto;
                 background: $color-background;
                 color: $color-white;
                 overflow-x: hidden;
+                -webkit-user-select: none;
+                /* For Safari */
+                -ms-user-select: none;
+                /* For IE10+/Edge */
+                user-select: none;
             }
             
             // Container
@@ -92,6 +98,7 @@
                             @include flex(row);
                             .router_menu {
                                 margin-left: $spacing-large;
+                                transition: all 0.6ms ease;
                             }
                         }
                         .mobile_icon {
@@ -123,6 +130,11 @@
                                 @include button-styles($color-blue);
                                 width: 204px;
                                 height: 58px;
+                                transition: all 0.9ms ease;
+                                &:hover {
+                                    backdrop-filter: blur(10px);
+                                    background-color: rgba(255, 255, 255, 0.3);
+                                }
                                 .button_content {
                                     @include flex(row, center, center);
                                 }
@@ -274,6 +286,37 @@
                 }
             }
             
+            .modal {
+                display: none;
+                transition: all 0.5s ease;
+                .router_menu-modal {
+                    color: $color-blue;
+                }
+                .modal_title {
+                    @include flex($align: center, $justify: space-between);
+                    margin: 20px 0;
+                }
+                .modal-body {
+                    @include flex($direction: column, $justify: space-between);
+                    height: 500px;
+                }
+                .router_menu-modal:not(:last-child) {
+                    margin-bottom: 50px;
+                }
+            }
+            
+            .active {
+                width: 240px;
+                height: 1040px;
+                display: block;
+                background-color: $color-white;
+                border-radius: 5px;
+                position: absolute;
+                top: -0%;
+                right: 0%;
+                transition: all 0.5s ease;
+            }
+            
             // Animations
             .in-view {
                 opacity: 1;
@@ -301,6 +344,10 @@
                             .mobile_icon {
                                 display: block;
                                 cursor: pointer;
+                                border: none;
+                                background-color: transparent;
+                                width: 24px;
+                                height: 24px;
                             }
                             .header_menu {
                                 display: none;
@@ -395,4 +442,18 @@
                         }
                     }
                 }
+            }
+            
+            //howers
+            .router_menu:hover {
+                color: $color-blue;
+            }
+            
+            .btn {
+                transition: all 0.9ms ease;
+            }
+            
+            .btn:hover {
+                backdrop-filter: blur(10px);
+                background-color: rgba(255, 255, 255, 0.3);
             }
